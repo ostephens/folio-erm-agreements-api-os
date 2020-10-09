@@ -1,0 +1,12 @@
+parameters:
+  - $ref: ../components/parameters/x-okapi-tenant.yaml
+  - $ref: ../components/parameters/x-okapi-token.yaml
+  - $ref: ../components/parameters/agreementUUID.yaml
+  - $ref: ../components/parameters/downloadFormat.yaml
+get:
+  summary: >-
+    Export a list of all resources in the internal KB associated with specified
+    agreement using the specified format
+  responses:
+    '200':
+      description: Success

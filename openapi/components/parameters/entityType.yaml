@@ -1,0 +1,16 @@
+in: path
+name: entityType
+required: true
+schema:
+  type: string
+  enum:
+    - contacts
+    - custprops
+    - entitlements
+    - jobs
+    - kbs
+    - org
+    - packages
+    - pci
+    - refdata
+    - sas

@@ -1,0 +1,16 @@
+type: object
+properties:
+  additionalInfo:
+    type: object
+  dateCreated:
+    type: integer
+  id:
+    type: string
+    format: uuid
+  message:
+    type: string
+  origin:
+    type: string
+    format: uuid
+  type:
+    type: string

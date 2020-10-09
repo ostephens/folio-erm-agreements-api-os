@@ -1,0 +1,17 @@
+parameters:
+  - $ref: ../components/parameters/x-okapi-tenant.yaml
+  - $ref: ../components/parameters/x-okapi-token.yaml
+  - $ref: ../components/parameters/agreementUUID.yaml
+get:
+  summary: >-
+    Returns resources in the internal KB associated with specified agreement
+    which will become actively part of the agreement in the future
+  responses:
+    '200':
+      description: Success
+      content:
+        aapplication/json:
+          schema:
+            oneOf:
+              - $ref: ../components/schemas/Results.yaml
+              - $ref: ../components/schemas/ResultsArray.yaml

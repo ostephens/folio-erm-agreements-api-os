@@ -1,0 +1,9 @@
+parameters:
+  - $ref: ../components/parameters/x-okapi-tenant.yaml
+  - $ref: ../components/parameters/x-okapi-token.yaml
+  - $ref: ../components/parameters/jobUUID.yaml
+get:
+  summary: Download a file created by the specified job
+  responses:
+    '200':
+      description: Success

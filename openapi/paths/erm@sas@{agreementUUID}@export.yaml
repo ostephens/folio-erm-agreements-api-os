@@ -1,0 +1,15 @@
+parameters:
+  - $ref: ../components/parameters/x-okapi-tenant.yaml
+  - $ref: ../components/parameters/x-okapi-token.yaml
+  - $ref: ../components/parameters/agreementUUID.yaml
+get:
+  summary: >-
+    Export the specified agreement as JSON including all resources in the
+    internal KB associated with specified agreement
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/Agreement.yaml
