@@ -12,5 +12,8 @@ schema:
     - org
     - packages
     - pci
+    - pti
+    - platforms
     - refdata
     - sas
+    - titles
