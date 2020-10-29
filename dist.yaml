@@ -664,8 +664,11 @@ components:
           - org
           - packages
           - pci
+          - pti
+          - platforms
           - refdata
           - sas
+          - titles
     filters:
       in: query
       name: filters
