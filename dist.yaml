@@ -669,6 +669,7 @@ components:
           - platforms
           - refdata
           - sas
+          - sts
           - titles
     filters:
       in: query
