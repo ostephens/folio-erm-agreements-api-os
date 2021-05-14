@@ -1,7 +1,8 @@
 openapi: 3.0.0
 info:
-  version: 0.0.1
+  version: 0.0.2
   title: Folio ERM Agreements
+  description: API for the Folio library services platform mod-agreements app
 servers:
   - url: 'http://localhost:9130'
   - url: 'https://folio-snapshot-okapi.dev.folio.org'
@@ -980,11 +981,22 @@ components:
               cancellationDeadline:
                 type: string
                 format: date
+              periodStatus:
+                type: string
               note:
                 type: string
               id:
                 type: string
                 format: uuid
+        startDate:
+          type: string
+          format: date
+        endDate:
+          type: string
+          format: date
+        cancellationDeadline:
+          type: string
+          format: date
         contacts:
           type: array
           items:
@@ -1136,6 +1148,22 @@ components:
           format: uuid
         name:
           type: string
+        dateCreated:
+          type: string
+          format: date
+        lastUpdated:
+          type: string
+          format: date
+        locators:
+          type: array
+          items:
+            type: object
+            properties:
+              domainName:
+                type: string
+              id:
+                type: string
+                format: uuid
     Kb:
       type: object
       properties:
@@ -1386,6 +1414,14 @@ components:
       properties:
         additionalInfo:
           type: object
+          properties:
+            jobId:
+              type: string
+              format: uuid
+            tenant:
+              type: string
+            tenantId:
+              type: string
         dateCreated:
           type: integer
         id:
@@ -1398,6 +1434,30 @@ components:
           format: uuid
         type:
           type: string
+    StringTemplate:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        dateCreated:
+          type: integer
+        rule:
+          type: string
+        context:
+          oneOf:
+            - type: string
+            - $ref: '#/components/schemas/RefData'
+        lastUpdated:
+          type: string
+          format: date
+        name:
+          type: string
+        idScopes:
+          type: array
+          items:
+            type: string
+            format: uuid
     Entity:
       oneOf:
         - $ref: '#/components/schemas/Agreement'
@@ -1414,6 +1474,7 @@ components:
         - $ref: '#/components/schemas/PackageContentItem'
         - $ref: '#/components/schemas/RefData'
         - $ref: '#/components/schemas/RefDataCategory'
+        - $ref: '#/components/schemas/StringTemplate'
     ResultsArray:
       type: array
       items:
