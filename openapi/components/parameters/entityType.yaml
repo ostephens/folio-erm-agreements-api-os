@@ -16,4 +16,5 @@ schema:
     - platforms
     - refdata
     - sas
+    - sts
     - titles
