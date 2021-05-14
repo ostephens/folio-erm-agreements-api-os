@@ -668,6 +668,7 @@ components:
           - pti
           - platforms
           - refdata
+          - resource
           - sas
           - sts
           - titles
