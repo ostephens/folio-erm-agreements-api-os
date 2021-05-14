@@ -13,3 +13,4 @@ oneOf:
   - $ref: ./PackageContentItem.yaml
   - $ref: ./RefData.yaml
   - $ref: ./RefDataCategory.yaml
+  - $ref: ./StringTemplate.yaml

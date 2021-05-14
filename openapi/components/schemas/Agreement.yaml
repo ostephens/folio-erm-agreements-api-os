@@ -50,11 +50,22 @@ properties:
         cancellationDeadline:
           type: string
           format: date
+        periodStatus:
+          type: string
         note:
           type: string
         id:
           type: string
           format: uuid
+  startDate:
+      type: string
+      format: date
+  endDate:
+      type: string
+      format: date
+  cancellationDeadline:
+      type: string
+      format: date
   contacts:
     type: array
     items:
