@@ -1,14 +1,14 @@
 openapi: 3.0.0
 info:
-  version: 0.0.2
+  version: 0.0.3
   title: Folio ERM Agreements
   description: API for the Folio library services platform mod-agreements app
 servers:
-  - url: 'http://localhost:9130'
-  - url: 'https://folio-snapshot-okapi.dev.folio.org'
-  - url: 'https://folio-testing-okapi.dev.folio.org'
+  - url: http://localhost:9130
+  - url: https://folio-snapshot-okapi.dev.folio.org
+  - url: https://folio-testing-okapi.dev.folio.org
 paths:
-  '/erm/{entityType}':
+  /erm/{entityType}:
     parameters:
       - $ref: '#/components/parameters/x-okapi-tenant'
       - $ref: '#/components/parameters/x-okapi-token'
@@ -58,7 +58,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ApplicationError'
-  '/erm/{entityType}/{entityUUID}':
+  /erm/{entityType}/{entityUUID}:
     parameters:
       - $ref: '#/components/parameters/x-okapi-tenant'
       - $ref: '#/components/parameters/x-okapi-token'
@@ -94,6 +94,15 @@ paths:
       responses:
         '204':
           description: Success
+  /erm/admin/triggerHousekeeping:
+    parameters:
+      - $ref: '#/components/parameters/x-okapi-tenant'
+      - $ref: '#/components/parameters/x-okapi-token'
+    get:
+      summary: Runs a series of housekeeping jobs for agreements
+      responses:
+        '200':
+          description: Success
   /erm/files:
     parameters:
       - $ref: '#/components/parameters/x-okapi-tenant'
@@ -118,7 +127,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/File'
-  '/erm/files/{fileUUID}':
+  /erm/files/{fileUUID}:
     parameters:
       - $ref: '#/components/parameters/x-okapi-tenant'
       - $ref: '#/components/parameters/x-okapi-token'
@@ -132,7 +141,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/File'
-  '/erm/files/{fileUUID}/raw':
+  /erm/files/{fileUUID}/raw:
     parameters:
       - $ref: '#/components/parameters/x-okapi-tenant'
       - $ref: '#/components/parameters/x-okapi-token'
@@ -142,7 +151,7 @@ paths:
       responses:
         '200':
           description: Success
-  '/erm/jobs/{jobType}':
+  /erm/jobs/{jobType}:
     parameters:
       - $ref: '#/components/parameters/x-okapi-tenant'
       - $ref: '#/components/parameters/x-okapi-token'
@@ -156,7 +165,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Job'
-  '/erm/jobs/type/{jobType}':
+  /erm/jobs/type/{jobType}:
     parameters:
       - $ref: '#/components/parameters/x-okapi-tenant'
       - $ref: '#/components/parameters/x-okapi-token'
@@ -180,7 +189,7 @@ paths:
                 oneOf:
                   - $ref: '#/components/schemas/Results'
                   - $ref: '#/components/schemas/ResultsArray'
-  '/erm/jobs/{jobUUID}/{logType}':
+  /erm/jobs/{jobUUID}/{logType}:
     parameters:
       - $ref: '#/components/parameters/x-okapi-tenant'
       - $ref: '#/components/parameters/x-okapi-token'
@@ -205,7 +214,7 @@ paths:
                 oneOf:
                   - $ref: '#/components/schemas/Results'
                   - $ref: '#/components/schemas/ResultsArray'
-  '/erm/jobs/{jobUUID}/downloadFileObject':
+  /erm/jobs/{jobUUID}/downloadFileObject:
     parameters:
       - $ref: '#/components/parameters/x-okapi-tenant'
       - $ref: '#/components/parameters/x-okapi-token'
@@ -215,7 +224,7 @@ paths:
       responses:
         '200':
           description: Success
-  '/erm/packages/{packageUUID}/content/all':
+  /erm/packages/{packageUUID}/content/all:
     parameters:
       - $ref: '#/components/parameters/x-okapi-tenant'
       - $ref: '#/components/parameters/x-okapi-token'
@@ -233,7 +242,7 @@ paths:
                 oneOf:
                   - $ref: '#/components/schemas/Results'
                   - $ref: '#/components/schemas/ResultsArray'
-  '/erm/packages/{packageUUID}/content/current':
+  /erm/packages/{packageUUID}/content/current:
     parameters:
       - $ref: '#/components/parameters/x-okapi-tenant'
       - $ref: '#/components/parameters/x-okapi-token'
@@ -251,7 +260,7 @@ paths:
                 oneOf:
                   - $ref: '#/components/schemas/Results'
                   - $ref: '#/components/schemas/ResultsArray'
-  '/erm/packages/{packageUUID}/content/future':
+  /erm/packages/{packageUUID}/content/future:
     parameters:
       - $ref: '#/components/parameters/x-okapi-tenant'
       - $ref: '#/components/parameters/x-okapi-token'
@@ -269,7 +278,7 @@ paths:
                 oneOf:
                   - $ref: '#/components/schemas/Results'
                   - $ref: '#/components/schemas/ResultsArray'
-  '/erm/packages/{packageUUID}/content/dropped':
+  /erm/packages/{packageUUID}/content/dropped:
     parameters:
       - $ref: '#/components/parameters/x-okapi-tenant'
       - $ref: '#/components/parameters/x-okapi-token'
@@ -287,7 +296,7 @@ paths:
                 oneOf:
                   - $ref: '#/components/schemas/Results'
                   - $ref: '#/components/schemas/ResultsArray'
-  '/erm/refdata/{domain}/{property}':
+  /erm/refdata/{domain}/{property}:
     parameters:
       - $ref: '#/components/parameters/x-okapi-tenant'
       - $ref: '#/components/parameters/x-okapi-token'
@@ -343,7 +352,7 @@ paths:
                 oneOf:
                   - $ref: '#/components/schemas/Results'
                   - $ref: '#/components/schemas/ResultsArray'
-  '/erm/resource/{resourceUUID}/entitlements':
+  /erm/resource/{resourceUUID}/entitlements:
     parameters:
       - $ref: '#/components/parameters/x-okapi-tenant'
       - $ref: '#/components/parameters/x-okapi-token'
@@ -369,7 +378,7 @@ paths:
                 oneOf:
                   - $ref: '#/components/schemas/Results'
                   - $ref: '#/components/schemas/ResultsArray'
-  '/erm/resource/{resourceUUID}/entitlements/related':
+  /erm/resource/{resourceUUID}/entitlements/related:
     parameters:
       - $ref: '#/components/parameters/x-okapi-tenant'
       - $ref: '#/components/parameters/x-okapi-token'
@@ -398,7 +407,7 @@ paths:
                   - $ref: '#/components/schemas/ResultsArray'
         '404':
           description: Not available. Failed to find PCI or PTI with specific UUID
-  '/erm/resource/{resourceUUID}/entitlementOptions':
+  /erm/resource/{resourceUUID}/entitlementOptions:
     parameters:
       - $ref: '#/components/parameters/x-okapi-tenant'
       - $ref: '#/components/parameters/x-okapi-token'
@@ -424,7 +433,7 @@ paths:
                 oneOf:
                   - $ref: '#/components/schemas/Results'
                   - $ref: '#/components/schemas/ResultsArray'
-  '/erm/sas/{agreementUUID}/clone':
+  /erm/sas/{agreementUUID}/clone:
     parameters:
       - $ref: '#/components/parameters/x-okapi-tenant'
       - $ref: '#/components/parameters/x-okapi-token'
@@ -449,7 +458,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ApplicationError'
-  '/erm/sas/{agreementUUID}/export':
+  /erm/sas/{agreementUUID}/export:
     parameters:
       - $ref: '#/components/parameters/x-okapi-tenant'
       - $ref: '#/components/parameters/x-okapi-token'
@@ -465,7 +474,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Agreement'
-  '/erm/sas/{agreementUUID}/export/current':
+  /erm/sas/{agreementUUID}/export/current:
     parameters:
       - $ref: '#/components/parameters/x-okapi-tenant'
       - $ref: '#/components/parameters/x-okapi-token'
@@ -482,7 +491,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Agreement'
-  '/erm/sas/{agreementUUID}/resources/all':
+  /erm/sas/{agreementUUID}/resources/all:
     parameters:
       - $ref: '#/components/parameters/x-okapi-tenant'
       - $ref: '#/components/parameters/x-okapi-token'
@@ -500,7 +509,7 @@ paths:
                 oneOf:
                   - $ref: '#/components/schemas/Results'
                   - $ref: '#/components/schemas/ResultsArray'
-  '/erm/sas/{agreementUUID}/resources/current':
+  /erm/sas/{agreementUUID}/resources/current:
     parameters:
       - $ref: '#/components/parameters/x-okapi-tenant'
       - $ref: '#/components/parameters/x-okapi-token'
@@ -518,7 +527,7 @@ paths:
                 oneOf:
                   - $ref: '#/components/schemas/Results'
                   - $ref: '#/components/schemas/ResultsArray'
-  '/erm/sas/{agreementUUID}/resources/future':
+  /erm/sas/{agreementUUID}/resources/future:
     parameters:
       - $ref: '#/components/parameters/x-okapi-tenant'
       - $ref: '#/components/parameters/x-okapi-token'
@@ -536,7 +545,7 @@ paths:
                 oneOf:
                   - $ref: '#/components/schemas/Results'
                   - $ref: '#/components/schemas/ResultsArray'
-  '/erm/sas/{agreementUUID}/resources/dropped':
+  /erm/sas/{agreementUUID}/resources/dropped:
     parameters:
       - $ref: '#/components/parameters/x-okapi-tenant'
       - $ref: '#/components/parameters/x-okapi-token'
@@ -554,7 +563,7 @@ paths:
                 oneOf:
                   - $ref: '#/components/schemas/Results'
                   - $ref: '#/components/schemas/ResultsArray'
-  '/erm/sas/{agreementUUID}/resources/export':
+  /erm/sas/{agreementUUID}/resources/export:
     parameters:
       - $ref: '#/components/parameters/x-okapi-tenant'
       - $ref: '#/components/parameters/x-okapi-token'
@@ -571,7 +580,7 @@ paths:
               schema:
                 oneOf:
                   - $ref: '#/components/schemas/resourcesInAgreementExport'
-  '/erm/sas/{agreementUUID}/resources/export/current':
+  /erm/sas/{agreementUUID}/resources/export/current:
     parameters:
       - $ref: '#/components/parameters/x-okapi-tenant'
       - $ref: '#/components/parameters/x-okapi-token'
@@ -588,7 +597,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/resourcesInAgreementExport'
-  '/erm/sas/{agreementUUID}/resources/export/{downloadFormat}':
+  /erm/sas/{agreementUUID}/resources/export/{downloadFormat}:
     parameters:
       - $ref: '#/components/parameters/x-okapi-tenant'
       - $ref: '#/components/parameters/x-okapi-token'
@@ -601,7 +610,7 @@ paths:
       responses:
         '200':
           description: Success
-  '/erm/sas/{agreementUUID}/resources/export/current/{downloadFormat}':
+  /erm/sas/{agreementUUID}/resources/export/current/{downloadFormat}:
     parameters:
       - $ref: '#/components/parameters/x-okapi-tenant'
       - $ref: '#/components/parameters/x-okapi-token'
@@ -660,6 +669,7 @@ components:
           - contacts
           - custprops
           - entitlements
+          - entitlementLogEntry
           - jobs
           - kbs
           - org
@@ -1253,7 +1263,7 @@ components:
         - properties:
             dateMonographPublished:
               type: string
-              pattern: '^\d{4}(-((0[0-9])|(1[0-2]))(-(([0-2][0-9])|3[0-1]))?)?\$'
+              pattern: ^\d{4}(-((0[0-9])|(1[0-2]))(-(([0-2][0-9])|3[0-1]))?)?\$
             firstAuthor:
               type: string
             firstEditor:

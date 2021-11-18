@@ -1,6 +1,6 @@
 openapi: 3.0.0
 info:
-  version: 0.0.2
+  version: 0.0.3
   title: Folio ERM Agreements
   description: API for the Folio library services platform mod-agreements app
 servers:
@@ -12,6 +12,8 @@ paths:
     $ref: 'paths/erm@{entityType}.yaml'
   '/erm/{entityType}/{entityUUID}':
     $ref: 'paths/erm@{entityType}@{entityUUID}.yaml'
+  /erm/admin/triggerHousekeeping:
+    $ref: paths/erm@admin@triggerHousekeeping.yaml
   /erm/files:
     $ref: paths/erm@files.yaml
   '/erm/files/{fileUUID}':

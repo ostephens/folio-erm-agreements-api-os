@@ -7,6 +7,7 @@ schema:
     - contacts
     - custprops
     - entitlements
+    - entitlementLogEntry
     - jobs
     - kbs
     - org
