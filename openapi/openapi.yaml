@@ -1,12 +1,12 @@
 openapi: 3.0.0
 info:
-  version: 0.0.3
+  version: 0.0.4
   title: Folio ERM Agreements
   description: API for the Folio library services platform mod-agreements app
 servers:
   - url: 'http://localhost:9130'
   - url: 'https://folio-snapshot-okapi.dev.folio.org'
-  - url: 'https://folio-testing-okapi.dev.folio.org'
+  - url: 'https://folio-snapshot-2-okapi.dev.folio.org'
 paths:
   '/erm/{entityType}':
     $ref: 'paths/erm@{entityType}.yaml'
