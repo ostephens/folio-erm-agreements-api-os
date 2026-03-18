@@ -6,6 +6,9 @@ get:
   summary: >-
     Returns list of entitlement options (ways of acquiring) the specified
     resource
+  operationId: getEntitlementOptions
+  security:
+    - api_key: []
   parameters:
     - $ref: ../components/parameters/filters.yaml
     - $ref: ../components/parameters/match.yaml

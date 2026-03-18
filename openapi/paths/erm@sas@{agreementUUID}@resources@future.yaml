@@ -6,6 +6,9 @@ get:
   summary: >-
     Returns resources in the internal KB associated with specified agreement
     which will become actively part of the agreement in the future
+  operationId: getAgreementFutureResources
+  security:
+    - api_key: []
   responses:
     '200':
       description: Success

@@ -7,6 +7,9 @@ get:
     Export the specified agreement as JSON including all resources in the
     internal KB associated with specified agreement actively part of the
     agreement on the current date
+  operationId: exportAgreementCurrentResources
+  security:
+    - api_key: []
   responses:
     '200':
       description: Success

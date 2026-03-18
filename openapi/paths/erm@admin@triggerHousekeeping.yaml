@@ -3,6 +3,11 @@ parameters:
   - $ref: ../components/parameters/x-okapi-token.yaml
 get:
   summary: Runs a series of housekeeping jobs for agreements
+  operationId: triggerHousekeeping
+  security:
+    - api_key: []
   responses:
     '200':
       description: Success
+    '403':
+      description: Forbidden

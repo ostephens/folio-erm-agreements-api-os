@@ -5,6 +5,9 @@ parameters:
   - $ref: ../components/parameters/logType.yaml
 get:
   summary: Get log for a job
+  operationId: getJoblog
+  security:
+    - api_key: []
   parameters:
     - $ref: ../components/parameters/filters.yaml
     - $ref: ../components/parameters/match.yaml

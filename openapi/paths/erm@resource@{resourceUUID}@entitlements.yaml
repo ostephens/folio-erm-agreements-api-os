@@ -6,6 +6,9 @@ get:
   summary: >-
     Returns list of entitlements (agreement lines) which include the resource
     directly or indirectly (e.g. as part of a package)
+  operationId: getEntitlements
+  security:
+    - api_key: []
   parameters:
     - $ref: ../components/parameters/filters.yaml
     - $ref: ../components/parameters/match.yaml

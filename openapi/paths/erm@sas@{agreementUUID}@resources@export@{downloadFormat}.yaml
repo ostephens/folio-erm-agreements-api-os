@@ -7,6 +7,9 @@ get:
   summary: >-
     Export a list of all resources in the internal KB associated with specified
     agreement using the specified format
+  operationId: exportAgreementResourcesFormattedAll
+  security:
+    - api_key: []
   responses:
     '200':
       description: Success

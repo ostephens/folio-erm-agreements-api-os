@@ -8,6 +8,9 @@ get:
     Export a list of all resources in the internal KB associated with specified
     agreement actively part of the agreement on the current date using the
     specified format
+  operationId: exportAgreementResourcesFormattedCurrent
+  security:
+    - api_key: []
   responses:
     '200':
       description: Success

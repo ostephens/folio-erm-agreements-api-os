@@ -13,6 +13,9 @@ parameters:
       type: string
 get:
   summary: Returns list of reference data values for specified domain/property
+  operationId: getRefdatabyCategory
+  security:
+    - api_key: []
   parameters:
     - $ref: ../components/parameters/filters.yaml
     - $ref: ../components/parameters/match.yaml

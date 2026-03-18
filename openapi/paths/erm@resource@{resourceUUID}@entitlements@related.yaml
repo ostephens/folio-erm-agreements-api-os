@@ -7,6 +7,9 @@ get:
     Returns list of entitlements (agreement lines) which offer access to the
     same title as the specified resource but on other platform-package
     combinations. Will return 404 for any resources other than PCIs and PTIs
+  operationId: getRelatedEntitlements
+  security:
+    - api_key: []
   parameters:
     - $ref: ../components/parameters/filters.yaml
     - $ref: ../components/parameters/match.yaml

@@ -6,6 +6,9 @@ get:
   summary: >-
     Returns all resources in the internal KB associated with a particular
     package
+  operationId: getPackageContentAll
+  security:
+    - api_key: []
   responses:
     '200':
       description: Success
