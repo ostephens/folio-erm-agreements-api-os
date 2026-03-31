@@ -62,7 +62,7 @@ put:
     '500':
       description: Internal server error  
 delete:
-  summary: Delete a specified serial record
+  summary: Delete a specified agreement record
   operationId: deleteAgreement
   parameters:
     - name: agreementId
