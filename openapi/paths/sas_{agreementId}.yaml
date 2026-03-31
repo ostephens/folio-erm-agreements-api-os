@@ -1,0 +1,89 @@
+get:
+  summary: Get a specified agreement record
+  operationId: getAgreement
+  parameters:
+    - name: agreementId
+      in: path
+      description: The uuid of the agreement to be fetched
+      required: true
+      schema:
+        type: string
+        format: uuid
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/Agreement.yaml
+    '400':
+      description: Bad request error
+    '403':
+      description: Forbidden
+    '404':
+      description: Not found error
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/HttpError.yaml
+    '500':
+      description: Internal server error
+put:
+  summary: Update agreement record
+  operationId: putAgreement
+  parameters:
+    - name: agreementId
+      in: path
+      description: The uuid of the agreement record to be put
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/Agreement.yaml
+    required: true
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/Agreement.yaml
+    '400':
+      description: Bad request error
+    '404':
+      description: Not found error
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/HttpError.yaml
+    '500':
+      description: Internal server error  
+delete:
+  summary: Delete a specified serial record
+  operationId: deleteAgreement
+  parameters:
+    - name: agreementId
+      in: path
+      description: The uuid of the agreement record to be deleted
+      required: true
+      schema:
+        type: string
+        format: uuid
+  responses:
+    '204':
+      description: No content
+    '400':
+      description: Bad request error
+    '403':
+      description: Forbidden
+    '404':
+      description: Not found error
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/HttpError.yaml
+    '500':
+      description: Internal server error
