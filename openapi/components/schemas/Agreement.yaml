@@ -3,7 +3,7 @@ required:
   - id
   - name
   - status
-  - period
+  - periods
 properties:
   id:
     type: string
